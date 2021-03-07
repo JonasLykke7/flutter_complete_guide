@@ -7,10 +7,10 @@ class CartItem {
   final double price;
 
   CartItem({
-    required this.id,
-    required this.title,
-    required this.quantity,
-    required this.price,
+    @required this.id,
+    @required this.title,
+    @required this.quantity,
+    @required this.price,
   });
 }
 
@@ -75,7 +75,7 @@ class Cart with ChangeNotifier {
       return;
     }
 
-    if (_items[id]!.quantity > 1) {
+    if (_items[id].quantity > 1) {
       _items.update(
           id,
           (existingCartItem) => CartItem(

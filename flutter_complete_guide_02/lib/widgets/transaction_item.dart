@@ -7,9 +7,9 @@ import '../models/transaction.dart';
 
 class TransactionItem extends StatefulWidget {
   const TransactionItem({
-    Key? key,
-    required this.transaction,
-    required this.deleteTx,
+    Key key,
+    @required this.transaction,
+    @required this.deleteTx,
   }) : super(key: key);
 
   final Transaction transaction;
@@ -20,7 +20,7 @@ class TransactionItem extends StatefulWidget {
 }
 
 class _TransactionItemState extends State<TransactionItem> {
-  Color? _bgColor;
+  Color _bgColor;
 
   @override
   void initState() {
