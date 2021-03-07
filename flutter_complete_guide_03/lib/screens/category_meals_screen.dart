@@ -15,15 +15,15 @@ class CategotyMealsScreen extends StatefulWidget {
 }
 
 class _CategotyMealsScreenState extends State<CategotyMealsScreen> {
-  String categoryTitle;
-  List<Meal> displayedMeals;
+  String? categoryTitle;
+  late List<Meal> displayedMeals;
   var _loadedInitData = false;
 
   @override
   void didChangeDependencies() {
     if (!_loadedInitData) {
       final routeArgs =
-          ModalRoute.of(context).settings.arguments as Map<String, String>;
+          ModalRoute.of(context)!.settings.arguments as Map<String, String>;
       categoryTitle = routeArgs['title'];
       final categoryID = routeArgs['id'];
       displayedMeals = widget.avaiableMeals.where((meal) {
@@ -47,7 +47,7 @@ class _CategotyMealsScreenState extends State<CategotyMealsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          categoryTitle,
+          categoryTitle!,
         ),
       ),
       body: ListView.builder(

@@ -16,7 +16,7 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  List<Map<String, dynamic>> _pages;
+  late List<Map<String, dynamic>> _pages;
 
   int _selectedPageIndex = 0;
 
