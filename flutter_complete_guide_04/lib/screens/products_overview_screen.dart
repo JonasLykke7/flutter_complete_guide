@@ -48,11 +48,11 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             ),
             itemBuilder: (_) => [
               PopupMenuItem(
-                child: Text('Only Favorites'),
+                child: const Text('Only Favorites'),
                 value: FilerOptions.Favorites,
               ),
               PopupMenuItem(
-                child: Text('Show All'),
+                child: const Text('Show All'),
                 value: FilerOptions.All,
               ),
             ],
@@ -63,7 +63,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               value: cart.itemCount.toString(),
             ),
             child: IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.shopping_cart,
               ),
               onPressed: () {
