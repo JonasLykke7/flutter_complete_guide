@@ -21,7 +21,7 @@ class AdaptiveFlatButton extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            onPressed: handler,
+            onPressed: handler as void Function()?,
           )
         : FlatButton(
             textColor: Theme.of(context).primaryColor,
@@ -31,7 +31,7 @@ class AdaptiveFlatButton extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            onPressed: handler,
+            onPressed: handler as void Function()?,
           );
   }
 }
