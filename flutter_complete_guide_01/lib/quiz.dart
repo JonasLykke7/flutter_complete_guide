@@ -9,9 +9,9 @@ class Quiz extends StatelessWidget {
   final Function anwserQuestion;
 
   Quiz({
-    required this.questions,
-    required this.anwserQuestion,
-    required this.questionIndex,
+    @required this.questions,
+    @required this.anwserQuestion,
+    @required this.questionIndex,
   });
 
   @override
@@ -19,12 +19,11 @@ class Quiz extends StatelessWidget {
     return Column(
       children: [
         Question(
-          questions[questionIndex]['questionText'] as String?,
+          questions[questionIndex]['questionText'],
         ),
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((anwser) {
-          return Anwser(
-              () => anwserQuestion(anwser['score']), anwser['text'] as String?);
+          return Anwser(() => anwserQuestion(anwser['score']), anwser['text']);
         }).toList()
       ],
     );

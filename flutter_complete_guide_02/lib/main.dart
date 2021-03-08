@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   @override
   void dispose() {
     super.dispose();
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
   }
 
   List<Transaction> get _recentTransactions {
@@ -220,7 +220,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
     final mediaQuery = MediaQuery.of(context);
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
 
-    final PreferredSizeWidget appBar = _buildAppBar() as PreferredSizeWidget;
+    final PreferredSizeWidget appBar = _buildAppBar();
 
     final txListWidget = Container(
       height: (mediaQuery.size.height -
@@ -239,13 +239,13 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
             if (isLandscape)
               ..._buildLandscapeContent(
                 mediaQuery,
-                appBar as AppBar,
+                appBar,
                 txListWidget,
               ),
             if (!isLandscape)
               ..._buildPortraitContent(
                 mediaQuery,
-                appBar as AppBar,
+                appBar,
                 txListWidget,
               ),
           ],
@@ -255,7 +255,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
     return Platform.isIOS
         ? CupertinoPageScaffold(
-            navigationBar: appBar as ObstructingPreferredSizeWidget?,
+            navigationBar: appBar,
             child: pageBody,
           )
         : Scaffold(
