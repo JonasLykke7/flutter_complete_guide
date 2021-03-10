@@ -25,7 +25,7 @@ class CartItem extends StatelessWidget {
       key: ValueKey(id),
       background: Container(
           color: Theme.of(context).errorColor,
-          child: Icon(
+          child: const Icon(
             Icons.delete,
             color: Colors.white,
             size: 40,
